@@ -27,6 +27,41 @@ pip install wetsuit
 
 ## Use
 
+### Basic Pipeline
+
+Here's an example that shows Scikit-Learn `Pipeline` compatibility. To align with the H2O API,
+we must instantiate the `WetsuitClassifier` with a list of feature names and the name of the
+response variable (these can also be indices). From there, you can plug in to a basic `Pipeline`
+object.
+
+```python
+import h2o
+from h2o.estimators import H2OXGBoostEstimator
+from sklearn.datasets import load_iris
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
+
+import wetsuit
+
+h2o.init()
+
+data = load_iris()
+
+cls = wetsuit.WetsuitClassifier(H2OXGBoostEstimator(), data['feature_names'], 'target')
+pl = Pipeline([
+    ('scaler', StandardScaler()),
+    ('cls', cls)
+])
+pl.fit(data['data'], data['target'])
+fitted = pl.predict(data['data'])
+
+h2o.cluster().shutdown()
+```
+
+*Note*: If you're doing feature selection within the pipeline, it's best instantiate the `WetsuitClassifier`
+from within the pipeline, so that you can dynamically pass a list of selected features using a
+selector's `.get_feature_names_out()` method.
+
 
 ## Documentation
 

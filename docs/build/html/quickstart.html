@@ -48,7 +48,10 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Wetsuit</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#why-wetsuit">Why Wetsuit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install">Install</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#use">Use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use">Use</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#basic-pipeline">Basic Pipeline</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a></li>
 </ul>
 </li>
@@ -89,6 +92,8 @@
              
   <section id="wetsuit">
 <h1>Wetsuit<a class="headerlink" href="#wetsuit" title="Permalink to this heading"></a></h1>
+<p><a class="reference external" href="https://www.python.org"><img alt="image" src="https://img.shields.io/badge/python-3.7--3.11-blue.svg" /></a>
+<a class="reference external" href="https://github.com/psf/black"><img alt="image" src="https://img.shields.io/badge/code%20style-black-black" /></a></p>
 <p>A Scikit-Learn wrapper for H2O Estimators.</p>
 <section id="why-wetsuit">
 <h2>Why Wetsuit<a class="headerlink" href="#why-wetsuit" title="Permalink to this heading"></a></h2>
@@ -104,13 +109,46 @@ numpy <code class="docutils literal notranslate"><span class="pre">NDArray</span
 </section>
 <section id="install">
 <h2>Install<a class="headerlink" href="#install" title="Permalink to this heading"></a></h2>
-<p>Create a virtual environment with Python &gt;= 3.9 and install from git:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/chris-santiago/wetsuit.git
+<p>Create a virtual environment with Python &gt;= 3.7 and install from PyPI:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>wetsuit
 </pre></div>
 </div>
 </section>
 <section id="use">
 <h2>Use<a class="headerlink" href="#use" title="Permalink to this heading"></a></h2>
+<section id="basic-pipeline">
+<h3>Basic Pipeline<a class="headerlink" href="#basic-pipeline" title="Permalink to this heading"></a></h3>
+<p>Here’s an example that shows Scikit-Learn <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> compatibility. To align with the H2O API,
+we must instantiate the <code class="docutils literal notranslate"><span class="pre">WetsuitClassifier</span></code> with a list of feature names and the name of the
+response variable (these can also be indices). From there, you can plug in to a basic <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code>
+object.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">h2o</span>
+<span class="kn">from</span> <span class="nn">h2o.estimators</span> <span class="kn">import</span> <span class="n">H2OXGBoostEstimator</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+
+<span class="kn">import</span> <span class="nn">wetsuit</span>
+
+<span class="n">h2o</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
+
+<span class="bp">cls</span> <span class="o">=</span> <span class="n">wetsuit</span><span class="o">.</span><span class="n">WetsuitClassifier</span><span class="p">(</span><span class="n">H2OXGBoostEstimator</span><span class="p">(),</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;feature_names&#39;</span><span class="p">],</span> <span class="s1">&#39;target&#39;</span><span class="p">)</span>
+<span class="n">pl</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;scaler&#39;</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">()),</span>
+    <span class="p">(</span><span class="s1">&#39;cls&#39;</span><span class="p">,</span> <span class="bp">cls</span><span class="p">)</span>
+<span class="p">])</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">])</span>
+<span class="n">fitted</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+
+<span class="n">h2o</span><span class="o">.</span><span class="n">cluster</span><span class="p">()</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><em>Note</em>: If you’re doing feature selection within the pipeline, it’s best instantiate the <code class="docutils literal notranslate"><span class="pre">WetsuitClassifier</span></code>
+from within the pipeline, so that you can dynamically pass a list of selected features using a
+selector’s <code class="docutils literal notranslate"><span class="pre">.get_feature_names_out()</span></code> method.</p>
+</section>
 </section>
 <section id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading"></a></h2>
