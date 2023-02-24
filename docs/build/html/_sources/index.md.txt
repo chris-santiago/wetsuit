@@ -1,4 +1,4 @@
-# H2O Wrapper Documentation
+# Wetsuit Documentation
 
 ```{include} contents.md
 ```
