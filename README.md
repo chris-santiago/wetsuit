@@ -19,10 +19,10 @@ numpy `NDArray` objects. Wetsuit provides two options for handling this behavior
 
 ## Install
 
-Create a virtual environment with Python >= 3.9 and install from git:
+Create a virtual environment with Python >= 3.7 and install from PyPI:
 
 ```bash
-pip install git+https://github.com/chris-santiago/wetsuit.git
+pip install wetsuit
 ```
 
 ## Use
