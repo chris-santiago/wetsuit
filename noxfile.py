@@ -5,27 +5,14 @@ import nox
 nox.options.tags = ["pytest", "qa"]  # default tags to run using command `nox`
 
 PROJECT = "wetsuit"
-PYTHON_REQUIRES = "3.9"
+PYTHON_SUPPORTED = [f'3.{i}' for i in range(7, 12)]
 PYTHON_SYS = f"{sys.version_info.major}.{sys.version_info.minor}"
 PYLINT_REQUIRES = "9.0"
 
 
-def python_versions(max_version=None):
-    """Get a list of Python versions to test."""
-    if not max_version:
-        max_version = PYTHON_SYS
-    return [
-        f"3.{v}"
-        for v in range(
-            int(PYTHON_REQUIRES.rsplit(".", 1)[-1]),
-            int(max_version.rsplit(".", 1)[-1]) + 1,
-        )
-    ]
-
-
 @nox.session(
     venv_backend="conda",
-    python=python_versions(),
+    python=PYTHON_SUPPORTED,
     reuse_venv=True,
     tags=["tests", "pre-release"],
 )
@@ -48,6 +35,18 @@ def test_supported_python(session):
 def test_system_python(session):
     """Run unit tests in current Python environment."""
     session.run("pytest")
+
+
+@nox.session(python=False, tags=["qa", "pre-release"])
+def isort(session):
+    """Fix module imports."""
+    session.run("isort", ".")
+
+
+@nox.session(python=False, tags=["qa", "pre-release"])
+def black(session):
+    """Format code with Black."""
+    session.run("black", PROJECT)
 
 
 @nox.session(python=False, tags=["qa", "pre-release"])
@@ -76,18 +75,6 @@ def flake8(session):
     session.run(
         "flake8", PROJECT, "--count", "--statistics", "--exit-zero"
     )  # these warn
-
-
-@nox.session(python=False, tags=["qa", "pre-release"])
-def isort(session):
-    """Fix module imports."""
-    session.run("isort", ".")
-
-
-@nox.session(python=False, tags=["qa", "pre-release"])
-def black(session):
-    """Format code with Black."""
-    session.run("black", PROJECT)
 
 
 @nox.session(python=False, tags=["pre-release"])

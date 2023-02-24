@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>wetsuit.models module &mdash; H2O Wrapper</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="wetsuit.transforms module" href="wetsuit.transforms.html" />
+    <link rel="prev" title="wetsuit package" href="wetsuit.html" />
+</head>
+
+<body class="wy-body-for-nav">
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+
+          <a href="index.html" class="icon icon-home">
+            wetsuit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Wetsuit</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">wetsuit</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="wetsuit.html">wetsuit package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="wetsuit.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">wetsuit.models module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wetsuit.transforms.html">wetsuit.transforms module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="wetsuit.html#module-wetsuit">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/chris-santiago/wetsuit">Github Repo</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">wetsuit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">wetsuit</a></li>
+          <li class="breadcrumb-item"><a href="wetsuit.html">wetsuit package</a></li>
+      <li class="breadcrumb-item active">wetsuit.models module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/wetsuit.models.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+
+  <section id="module-wetsuit.models">
+<span id="wetsuit-models-module"></span><h1>wetsuit.models module<a class="headerlink" href="#module-wetsuit.models" title="Permalink to this heading"></a></h1>
+<p>Models module.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="wetsuit.models.BaseContainer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">wetsuit.models.</span></span><span class="sig-name descname"><span class="pre">BaseContainer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">H2OEstimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wetsuit/models.html#BaseContainer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wetsuit.models.BaseContainer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseEstimator</span></code></p>
+<p>Base container class.</p>
+<p>Instantiate estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>estimator</strong> (<em>H2OEstimator</em>) – An instantiated H2OEstimator.</p></li>
+<li><p><strong>features</strong> (<em>List[Union[str, int]]</em>) – A list of column names or indices indicating the predictor variables.</p></li>
+<li><p><strong>response</strong> (<em>Union[str, int]</em>) – A column name or index indicating the response variable.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="wetsuit.models.BaseContainer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">H2OEstimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wetsuit/models.html#BaseContainer.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wetsuit.models.BaseContainer.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Instantiate estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>estimator</strong> (<em>H2OEstimator</em>) – An instantiated H2OEstimator.</p></li>
+<li><p><strong>features</strong> (<em>List[Union[str, int]]</em>) – A list of column names or indices indicating the predictor variables.</p></li>
+<li><p><strong>response</strong> (<em>Union[str, int]</em>) – A column name or index indicating the response variable.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wetsuit.models.BaseContainer.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#wetsuit.models.BaseContainer" title="wetsuit.models.BaseContainer"><span class="pre">BaseContainer</span></a></span></span><a class="reference internal" href="_modules/wetsuit/models.html#BaseContainer.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wetsuit.models.BaseContainer.fit" title="Permalink to this definition"></a></dt>
+<dd><p>Fit the estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>Array-like of shape [n_samples, n_features]</em>) – The input samples.</p></li>
+<li><p><strong>y</strong> (<em>Array-like of shape (n_samples,) or (n_samples, n_outputs)</em>) – Target values (None for unsupervised transformations).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>BaseContainer</em> – Self.</p>
+</dd>
+</dl>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<p>Conversion to H2OFrame is handled in the <cite>.fit()</cite> method.
+Conversion to DataFrame is handled in the <cite>.predict()</cite> method.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wetsuit.models.BaseContainer.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/wetsuit/models.html#BaseContainer.predict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wetsuit.models.BaseContainer.predict" title="Permalink to this definition"></a></dt>
+<dd><p>Make predictions with fitted estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>X</strong> (<em>array of shape [n_samples, n_features]</em>) – The input samples.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>np.ndarray</em> – Array of predicted values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wetsuit.models.BaseContainer.get_params">
+<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wetsuit.models.BaseContainer.get_params" title="Permalink to this definition"></a></dt>
+<dd><p>Get parameters for this estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>deep</strong> (<em>bool, default=True</em>) – If True, will return the parameters for this estimator and
+contained subobjects that are estimators.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>params</strong> (<em>dict</em>) – Parameter names mapped to their values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wetsuit.models.BaseContainer.set_params">
+<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wetsuit.models.BaseContainer.set_params" title="Permalink to this definition"></a></dt>
+<dd><p>Set the parameters of this estimator.</p>
+<p>The method works on simple estimators as well as on nested objects
+(such as <code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code>). The latter have
+parameters of the form <code class="docutils literal notranslate"><span class="pre">&lt;component&gt;__&lt;parameter&gt;</span></code> so that it’s
+possible to update each component of a nested object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**params</strong> (<em>dict</em>) – Estimator parameters.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>self</strong> (<em>estimator instance</em>) – Estimator instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="wetsuit.models.WetsuitRegressor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">wetsuit.models.</span></span><span class="sig-name descname"><span class="pre">WetsuitRegressor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">H2OEstimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wetsuit/models.html#WetsuitRegressor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wetsuit.models.WetsuitRegressor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#wetsuit.models.BaseContainer" title="wetsuit.models.BaseContainer"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseContainer</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">RegressorMixin</span></code></p>
+<p>Scikit-Learn wrapper for H2O Regressors.</p>
+<p>Instantiate estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>estimator</strong> (<em>H2OEstimator</em>) – An instantiated H2OEstimator.</p></li>
+<li><p><strong>features</strong> (<em>List[Union[str, int]]</em>) – A list of column names or indices indicating the predictor variables.</p></li>
+<li><p><strong>response</strong> (<em>Union[str, int]</em>) – A column name or index indicating the response variable.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="wetsuit.models.WetsuitRegressor.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">H2OEstimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wetsuit.models.WetsuitRegressor.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Instantiate estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>estimator</strong> (<em>H2OEstimator</em>) – An instantiated H2OEstimator.</p></li>
+<li><p><strong>features</strong> (<em>List[Union[str, int]]</em>) – A list of column names or indices indicating the predictor variables.</p></li>
+<li><p><strong>response</strong> (<em>Union[str, int]</em>) – A column name or index indicating the response variable.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wetsuit.models.WetsuitRegressor.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#wetsuit.models.BaseContainer" title="wetsuit.models.BaseContainer"><span class="pre">BaseContainer</span></a></span></span><a class="headerlink" href="#wetsuit.models.WetsuitRegressor.fit" title="Permalink to this definition"></a></dt>
+<dd><p>Fit the estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>Array-like of shape [n_samples, n_features]</em>) – The input samples.</p></li>
+<li><p><strong>y</strong> (<em>Array-like of shape (n_samples,) or (n_samples, n_outputs)</em>) – Target values (None for unsupervised transformations).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>BaseContainer</em> – Self.</p>
+</dd>
+</dl>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<p>Conversion to H2OFrame is handled in the <cite>.fit()</cite> method.
+Conversion to DataFrame is handled in the <cite>.predict()</cite> method.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wetsuit.models.WetsuitRegressor.get_params">
+<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wetsuit.models.WetsuitRegressor.get_params" title="Permalink to this definition"></a></dt>
+<dd><p>Get parameters for this estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>deep</strong> (<em>bool, default=True</em>) – If True, will return the parameters for this estimator and
+contained subobjects that are estimators.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>params</strong> (<em>dict</em>) – Parameter names mapped to their values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wetsuit.models.WetsuitRegressor.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#wetsuit.models.WetsuitRegressor.predict" title="Permalink to this definition"></a></dt>
+<dd><p>Make predictions with fitted estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>X</strong> (<em>array of shape [n_samples, n_features]</em>) – The input samples.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>np.ndarray</em> – Array of predicted values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wetsuit.models.WetsuitRegressor.score">
+<span class="sig-name descname"><span class="pre">score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wetsuit.models.WetsuitRegressor.score" title="Permalink to this definition"></a></dt>
+<dd><p>Return the coefficient of determination of the prediction.</p>
+<p>The coefficient of determination <aside class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">R^2</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-10-01&gt;
+L3 programming layer &lt;2020-09-24&gt; xparse &lt;2020-03-03&gt;
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/base/article.c
+ls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/base/size12.cl
+o))
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/base/inputenc.
+sty)
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmat
+h.sty
+For additional information on amsmath, use the `?' option.
+
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstex
+t.sty
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen
+.sty))
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy
+.sty)
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn
+.sty))
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amscls/amsthm.
+sty)
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssy
+mb.sty
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfo
+nts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name:
+! Emergency stop.
+&lt;read *&gt;
+
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</aside>
+ is defined as
+<aside class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">(1 - \frac{u}{v})</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-10-01&gt;
+L3 programming layer &lt;2020-09-24&gt; xparse &lt;2020-03-03&gt;
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/base/article.c
+ls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/base/size12.cl
+o))
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/base/inputenc.
+sty)
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmat
+h.sty
+For additional information on amsmath, use the `?' option.
+
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstex
+t.sty
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen
+.sty))
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy
+.sty)
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn
+.sty))
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amscls/amsthm.
+sty)
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssy
+mb.sty
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfo
+nts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name:
+! Emergency stop.
+&lt;read *&gt;
+
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</aside>
+, where <aside class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">u</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-10-01&gt;
+L3 programming layer &lt;2020-09-24&gt; xparse &lt;2020-03-03&gt;
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/base/article.c
+ls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/base/size12.cl
+o))
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/base/inputenc.
+sty)
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmat
+h.sty
+For additional information on amsmath, use the `?' option.
+
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstex
+t.sty
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen
+.sty))
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy
+.sty)
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn
+.sty))
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amscls/amsthm.
+sty)
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssy
+mb.sty
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfo
+nts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name:
+! Emergency stop.
+&lt;read *&gt;
+
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</aside>
+ is the residual
+sum of squares <code class="docutils literal notranslate"><span class="pre">((y_true</span> <span class="pre">-</span> <span class="pre">y_pred)**</span> <span class="pre">2).sum()</span></code> and <aside class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">v</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-10-01&gt;
+L3 programming layer &lt;2020-09-24&gt; xparse &lt;2020-03-03&gt;
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/base/article.c
+ls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/base/size12.cl
+o))
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/base/inputenc.
+sty)
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmat
+h.sty
+For additional information on amsmath, use the `?' option.
+
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstex
+t.sty
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen
+.sty))
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy
+.sty)
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn
+.sty))
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amscls/amsthm.
+sty)
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssy
+mb.sty
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfo
+nts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name:
+! Emergency stop.
+&lt;read *&gt;
+
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</aside>
+
+is the total sum of squares <code class="docutils literal notranslate"><span class="pre">((y_true</span> <span class="pre">-</span> <span class="pre">y_true.mean())</span> <span class="pre">**</span> <span class="pre">2).sum()</span></code>.
+The best possible score is 1.0 and it can be negative (because the
+model can be arbitrarily worse). A constant model that always predicts
+the expected value of <cite>y</cite>, disregarding the input features, would get
+a <aside class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">R^2</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-10-01&gt;
+L3 programming layer &lt;2020-09-24&gt; xparse &lt;2020-03-03&gt;
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/base/article.c
+ls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/base/size12.cl
+o))
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/base/inputenc.
+sty)
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmat
+h.sty
+For additional information on amsmath, use the `?' option.
+
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstex
+t.sty
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen
+.sty))
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy
+.sty)
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn
+.sty))
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amscls/amsthm.
+sty)
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssy
+mb.sty
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfo
+nts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name:
+! Emergency stop.
+&lt;read *&gt;
+
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</aside>
+ score of 0.0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>array-like of shape (n_samples, n_features)</em>) – Test samples. For some estimators this may be a precomputed
+kernel matrix or a list of generic objects instead with shape
+<code class="docutils literal notranslate"><span class="pre">(n_samples,</span> <span class="pre">n_samples_fitted)</span></code>, where <code class="docutils literal notranslate"><span class="pre">n_samples_fitted</span></code>
+is the number of samples used in the fitting for the estimator.</p></li>
+<li><p><strong>y</strong> (<em>array-like of shape (n_samples,) or (n_samples, n_outputs)</em>) – True values for <cite>X</cite>.</p></li>
+<li><p><strong>sample_weight</strong> (<em>array-like of shape (n_samples,), default=None</em>) – Sample weights.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>score</strong> (<em>float</em>) – <aside class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">R^2</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-10-01&gt;
+L3 programming layer &lt;2020-09-24&gt; xparse &lt;2020-03-03&gt;
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/base/article.c
+ls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/base/size12.cl
+o))
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/base/inputenc.
+sty)
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmat
+h.sty
+For additional information on amsmath, use the `?' option.
+
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstex
+t.sty
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen
+.sty))
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy
+.sty)
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn
+.sty))
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amscls/amsthm.
+sty)
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssy
+mb.sty
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfo
+nts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name:
+! Emergency stop.
+&lt;read *&gt;
+
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</aside>
+ of <code class="docutils literal notranslate"><span class="pre">self.predict(X)</span></code> wrt. <cite>y</cite>.</p>
+</dd>
+</dl>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<p>The <aside class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">R^2</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-10-01&gt;
+L3 programming layer &lt;2020-09-24&gt; xparse &lt;2020-03-03&gt;
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/base/article.c
+ls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/base/size12.cl
+o))
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/base/inputenc.
+sty)
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmat
+h.sty
+For additional information on amsmath, use the `?' option.
+
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstex
+t.sty
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen
+.sty))
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy
+.sty)
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn
+.sty))
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amscls/amsthm.
+sty)
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssy
+mb.sty
+(/Users/christophersantiago/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfo
+nts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name:
+! Emergency stop.
+&lt;read *&gt;
+
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</aside>
+ score used when calling <code class="docutils literal notranslate"><span class="pre">score</span></code> on a regressor uses
+<code class="docutils literal notranslate"><span class="pre">multioutput='uniform_average'</span></code> from version 0.23 to keep consistent
+with default value of <code class="xref py py-func docutils literal notranslate"><span class="pre">r2_score()</span></code>.
+This influences the <code class="docutils literal notranslate"><span class="pre">score</span></code> method of all the multioutput
+regressors (except for
+<code class="xref py py-class docutils literal notranslate"><span class="pre">MultiOutputRegressor</span></code>).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wetsuit.models.WetsuitRegressor.set_params">
+<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wetsuit.models.WetsuitRegressor.set_params" title="Permalink to this definition"></a></dt>
+<dd><p>Set the parameters of this estimator.</p>
+<p>The method works on simple estimators as well as on nested objects
+(such as <code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code>). The latter have
+parameters of the form <code class="docutils literal notranslate"><span class="pre">&lt;component&gt;__&lt;parameter&gt;</span></code> so that it’s
+possible to update each component of a nested object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**params</strong> (<em>dict</em>) – Estimator parameters.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>self</strong> (<em>estimator instance</em>) – Estimator instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="wetsuit.models.WetsuitClassifier">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">wetsuit.models.</span></span><span class="sig-name descname"><span class="pre">WetsuitClassifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">H2OEstimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wetsuit/models.html#WetsuitClassifier"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wetsuit.models.WetsuitClassifier" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#wetsuit.models.BaseContainer" title="wetsuit.models.BaseContainer"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseContainer</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ClassifierMixin</span></code></p>
+<p>Scikit-Learn wrapper for H2O Classifiers.</p>
+<p>Instantiate estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>estimator</strong> (<em>H2OEstimator</em>) – An instantiated H2OEstimator.</p></li>
+<li><p><strong>features</strong> (<em>List[Union[str, int]]</em>) – A list of column names or indices indicating the predictor variables.</p></li>
+<li><p><strong>response</strong> (<em>Union[str, int]</em>) – A column name or index indicating the response variable.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="wetsuit.models.WetsuitClassifier.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">H2OEstimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wetsuit.models.WetsuitClassifier.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Instantiate estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>estimator</strong> (<em>H2OEstimator</em>) – An instantiated H2OEstimator.</p></li>
+<li><p><strong>features</strong> (<em>List[Union[str, int]]</em>) – A list of column names or indices indicating the predictor variables.</p></li>
+<li><p><strong>response</strong> (<em>Union[str, int]</em>) – A column name or index indicating the response variable.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wetsuit.models.WetsuitClassifier.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#wetsuit.models.BaseContainer" title="wetsuit.models.BaseContainer"><span class="pre">BaseContainer</span></a></span></span><a class="headerlink" href="#wetsuit.models.WetsuitClassifier.fit" title="Permalink to this definition"></a></dt>
+<dd><p>Fit the estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>Array-like of shape [n_samples, n_features]</em>) – The input samples.</p></li>
+<li><p><strong>y</strong> (<em>Array-like of shape (n_samples,) or (n_samples, n_outputs)</em>) – Target values (None for unsupervised transformations).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>BaseContainer</em> – Self.</p>
+</dd>
+</dl>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<p>Conversion to H2OFrame is handled in the <cite>.fit()</cite> method.
+Conversion to DataFrame is handled in the <cite>.predict()</cite> method.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wetsuit.models.WetsuitClassifier.get_params">
+<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wetsuit.models.WetsuitClassifier.get_params" title="Permalink to this definition"></a></dt>
+<dd><p>Get parameters for this estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>deep</strong> (<em>bool, default=True</em>) – If True, will return the parameters for this estimator and
+contained subobjects that are estimators.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>params</strong> (<em>dict</em>) – Parameter names mapped to their values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wetsuit.models.WetsuitClassifier.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#wetsuit.models.WetsuitClassifier.predict" title="Permalink to this definition"></a></dt>
+<dd><p>Make predictions with fitted estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>X</strong> (<em>array of shape [n_samples, n_features]</em>) – The input samples.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>np.ndarray</em> – Array of predicted values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wetsuit.models.WetsuitClassifier.score">
+<span class="sig-name descname"><span class="pre">score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wetsuit.models.WetsuitClassifier.score" title="Permalink to this definition"></a></dt>
+<dd><p>Return the mean accuracy on the given test data and labels.</p>
+<p>In multi-label classification, this is the subset accuracy
+which is a harsh metric since you require for each sample that
+each label set be correctly predicted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>array-like of shape (n_samples, n_features)</em>) – Test samples.</p></li>
+<li><p><strong>y</strong> (<em>array-like of shape (n_samples,) or (n_samples, n_outputs)</em>) – True labels for <cite>X</cite>.</p></li>
+<li><p><strong>sample_weight</strong> (<em>array-like of shape (n_samples,), default=None</em>) – Sample weights.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>score</strong> (<em>float</em>) – Mean accuracy of <code class="docutils literal notranslate"><span class="pre">self.predict(X)</span></code> wrt. <cite>y</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wetsuit.models.WetsuitClassifier.set_params">
+<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wetsuit.models.WetsuitClassifier.set_params" title="Permalink to this definition"></a></dt>
+<dd><p>Set the parameters of this estimator.</p>
+<p>The method works on simple estimators as well as on nested objects
+(such as <code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code>). The latter have
+parameters of the form <code class="docutils literal notranslate"><span class="pre">&lt;component&gt;__&lt;parameter&gt;</span></code> so that it’s
+possible to update each component of a nested object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**params</strong> (<em>dict</em>) – Estimator parameters.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>self</strong> (<em>estimator instance</em>) – Estimator instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="wetsuit.html" class="btn btn-neutral float-left" title="wetsuit package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="wetsuit.transforms.html" class="btn btn-neutral float-right" title="wetsuit.transforms module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Chris Santiago.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+</body>
+</html>

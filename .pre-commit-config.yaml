@@ -3,7 +3,7 @@
 repos:
   # -------------------- Base --------------------
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: stable
+    rev: v4.4.0
     hooks:
       - id: trailing-whitespace
 #        exclude: (^tests/|^docs/)
@@ -12,30 +12,3 @@ repos:
       - id: check-yaml
       - id: check-added-large-files
       - id: debug-statements
-  # -------------------- iSort --------------------
-  - repo: https://github.com/PyCQA/isort
-    rev: 5.9.2
-    hooks:
-      - id: isort
-        types: [ python ]
-  # -------------------- Black --------------------
-  - repo: https://github.com/psf/black
-    rev: stable
-    hooks:
-      - id: black
-        types: [file, python]
-        exclude: (^tests/|^docs/)
-  # -------------------- Flake8 --------------------
-  - repo: https://github.com/PyCQA/flake8
-    rev: stable
-    hooks:
-      - id: flake8
-        additional_dependencies: [ flake8-docstrings ]
-        exclude: (^tests/|^docs/)
-        args: [
-            '--count',
-            '--statistics',
-            '--exit-zero',
-            '--show-source',
-            '--max-line-length', '100',
-        ]

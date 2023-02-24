@@ -77,7 +77,7 @@ man_pages = [
     (
         master_doc,
         "wetsuit",
-        "H2O Wrapper Documentation",
+        "Wetsuit Documentation",
         [author],
         1,
     )
