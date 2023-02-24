@@ -1,10 +1,20 @@
 """Transformers module."""
+import warnings
 from typing import List, Tuple, Union
 
 import h2o
 import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.utils.validation import check_is_fitted
+
+warnings.warn(
+    """
+    Warning: `H2oFrameTransformer` is not designed for use in a Scikit-Learn `Pipeline`
+    object. Scikit-Learn does not support target transformation within a `Pipeline`.
+
+    This is more a convenience function and may be removed.
+    """
+)
 
 
 class H2oFrameTransformer(BaseEstimator, TransformerMixin):

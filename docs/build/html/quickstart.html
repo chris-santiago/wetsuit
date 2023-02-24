@@ -98,13 +98,13 @@
 <section id="why-wetsuit">
 <h2>Why Wetsuit<a class="headerlink" href="#why-wetsuit" title="Permalink to this heading"></a></h2>
 <p>While H2O Estimators have the <code class="docutils literal notranslate"><span class="pre">.fit()</span></code> and <code class="docutils literal notranslate"><span class="pre">.predict()</span></code> methods of the Scikit-Learn API, they don’t always
-function as expected, especially with <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> objects. This package contains two estimators and a
-single transformer to remedy.</p>
+function as expected, especially with <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> objects. This package contains two estimators to remedy.</p>
 <p>For example. the <code class="docutils literal notranslate"><span class="pre">H2OEstimator.fit()</span></code> method expects two <code class="docutils literal notranslate"><span class="pre">H2OFrame</span></code> objects, vice pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> or
-numpy <code class="docutils literal notranslate"><span class="pre">NDArray</span></code> objects. Wetsuit provides two options for handling this behavior:</p>
+numpy <code class="docutils literal notranslate"><span class="pre">NDArray</span></code> objects. Wetsuit provides two classes classes that wrap <code class="docutils literal notranslate"><span class="pre">H2OEstimator</span></code> objects and
+handle type conversion automatically, within the <code class="docutils literal notranslate"><span class="pre">.fit()</span></code> and <code class="docutils literal notranslate"><span class="pre">.predict()</span></code> methods:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">WetsuitRegressor</span></code> and <code class="docutils literal notranslate"><span class="pre">WetsuitClassifier</span></code> classes that wrap <code class="docutils literal notranslate"><span class="pre">H2OEstimator</span></code> objects and handle type conversion automatically, within the <code class="docutils literal notranslate"><span class="pre">.fit()</span></code> and <code class="docutils literal notranslate"><span class="pre">.predict()</span></code> methods.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">H2oFrameTransformer</span></code> class that converts both <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> and <code class="docutils literal notranslate"><span class="pre">NDArray</span></code> objects to <code class="docutils literal notranslate"><span class="pre">H2OFrame</span></code> objects via <code class="docutils literal notranslate"><span class="pre">.fit_transform()</span></code>, and an <code class="docutils literal notranslate"><span class="pre">.inverse_transform()</span></code> method to convert back.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WetsuitRegressor</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WetsuitClassifier</span></code></p></li>
 </ul>
 </section>
 <section id="install">

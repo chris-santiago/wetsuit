@@ -80,12 +80,22 @@
              
   <h1>Source code for wetsuit.transforms</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;Transformers module.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
 
 <span class="kn">import</span> <span class="nn">h2o</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span>
 <span class="kn">from</span> <span class="nn">sklearn.utils.validation</span> <span class="kn">import</span> <span class="n">check_is_fitted</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Warning: `H2oFrameTransformer` is not designed for use in a Scikit-Learn `Pipeline`</span>
+<span class="sd">    object. Scikit-Learn does not support target transformation within a `Pipeline`.</span>
+<span class="sd">    </span>
+<span class="sd">    This is more a convenience function and may be removed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<span class="p">)</span>
 
 
 <div class="viewcode-block" id="H2oFrameTransformer"><a class="viewcode-back" href="../../wetsuit.transforms.html#wetsuit.transforms.H2oFrameTransformer">[docs]</a><span class="k">class</span> <span class="nc">H2oFrameTransformer</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>
