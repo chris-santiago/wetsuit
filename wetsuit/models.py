@@ -70,9 +70,9 @@ class BaseContainer(BaseEstimator):
         return self.estimator.predict(frame).as_data_frame()
 
 
-class H2oRegressor(BaseContainer, RegressorMixin):
+class WetsuitRegressor(BaseContainer, RegressorMixin):
     pass
 
 
-class H2oClassifier(BaseContainer, ClassifierMixin):
+class WetsuitClassifier(BaseContainer, ClassifierMixin):
     pass
