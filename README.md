@@ -1,5 +1,8 @@
 # Wetsuit
 
+[![image](https://img.shields.io/badge/python-3.7--3.11-blue.svg)](https://www.python.org)
+[![image](https://img.shields.io/badge/code%20style-black-black)](https://github.com/psf/black)
+
 A Scikit-Learn wrapper for H2O Estimators.
 
 ## Why Wetsuit
@@ -8,7 +11,7 @@ While H2O Estimators have the `.fit()` and `.predict()` methods of the Scikit-Le
 function as expected, especially with `Pipeline` objects. This package contains two estimators and a
 single transformer to remedy.
 
-For example. the `H2OEstimator.fit()` method expects two `H2OFrame` objects, vice pandas `DataFrame` or 
+For example. the `H2OEstimator.fit()` method expects two `H2OFrame` objects, vice pandas `DataFrame` or
 numpy `NDArray` objects. Wetsuit provides two options for handling this behavior:
 
 - `WetsuitRegressor` and `WetsuitClassifier` classes that wrap `H2OEstimator` objects and handle type conversion automatically, within the `.fit()` and `.predict()` methods.
