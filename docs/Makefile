@@ -5,7 +5,7 @@
 # from the environment for the first two.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
-SPHINXPROJ    = h2owrapper
+SPHINXPROJ    = wetsuit
 SOURCEDIR     = source
 BUILDDIR      = build
 SPHINXAPI     = sphinx-apidoc

@@ -5,7 +5,7 @@
 Create a virtual environment with Python >= 3.9 and install from git:
 
 ```bash
-pip install git+https://github.com/chris-santiago/h2owrapper.git
+pip install git+https://github.com/chris-santiago/wetsuit.git
 ```
 
 ## Use
@@ -13,4 +13,4 @@ pip install git+https://github.com/chris-santiago/h2owrapper.git
 
 ## Documentation
 
-Documentation hosted on Github Pages: [https://chris-santiago.github.io/h2owrapper/](https://chris-santiago.github.io/h2owrapper/)
+Documentation hosted on Github Pages: [https://chris-santiago.github.io/wetsuit/](https://chris-santiago.github.io/wetsuit/)

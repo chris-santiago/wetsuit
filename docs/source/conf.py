@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = "H2O Wrapper"
+project = "wetsuit"
 copyright = "2021, Chris Santiago"
 author = "Chris Santiago"
 
@@ -66,7 +66,7 @@ html_title = "H2O Wrapper"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
-htmlhelp_basename = "h2owrapperdoc"
+htmlhelp_basename = "wetsuitdoc"
 
 
 # -- Options for manual page output ---------------------------------------
@@ -76,7 +76,7 @@ htmlhelp_basename = "h2owrapperdoc"
 man_pages = [
     (
         master_doc,
-        "h2owrapper",
+        "wetsuit",
         "H2O Wrapper Documentation",
         [author],
         1,

@@ -4,7 +4,7 @@ import nox
 
 nox.options.tags = ["pytest", "qa"]  # default tags to run using command `nox`
 
-PROJECT = "h2owrapper"
+PROJECT = "wetsuit"
 PYTHON_REQUIRES = "3.9"
 PYTHON_SYS = f"{sys.version_info.major}.{sys.version_info.minor}"
 PYLINT_REQUIRES = "9.0"

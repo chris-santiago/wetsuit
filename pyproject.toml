@@ -4,9 +4,9 @@ build-backend = "setuptools.build_meta"
 
 
 [project]
-name = "h2owrapper"
+name = "wetsuit"
 version = "0.1.0"
-description = "A pScikiit-learn style wrapper for H2O estimators."
+description = "A Scikit-learn style wrapper for H2O estimators."
 readme = "README.md"
 license = { text ="MIT License" }
 requires-python = ">=3.9"
@@ -56,16 +56,16 @@ build = [
 ]
 
 dev = [
-    "h2owrapper[docs]",
-    "h2owrapper[tests]",
-    "h2owrapper[qa]",
-    "h2owrapper[build]",
+    "wetsuit[docs]",
+    "wetsuit[tests]",
+    "wetsuit[qa]",
+    "wetsuit[build]",
 ]
 
 
 [project.urls]
-"Sourcecode" = "https://github.com/chris-santiago/h2owrapper"
-"Documentation" = "https://chris-santiago.github.io/h2owrapper/"
+"Sourcecode" = "https://github.com/chris-santiago/wetsuit"
+"Documentation" = "https://chris-santiago.github.io/wetsuit/"
 
 
 [tool.setuptools]
@@ -129,4 +129,4 @@ ignore-docstrings = "yes"
 
 [tool.pytest.ini_options]
 testpaths = ["tests/"]
-addopts = "--cov=h2owrapper --cov-report=html --verbose"
+addopts = "--cov=wetsuit --cov-report=html --verbose"

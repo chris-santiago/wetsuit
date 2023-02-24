@@ -21,5 +21,5 @@ maxdepth: 4
 caption: Contents
 ---
 changelog
-Github Repo <https://github.com/chris-santiago/h2owrapper>
+Github Repo <https://github.com/chris-santiago/wetsuit>
 ```
